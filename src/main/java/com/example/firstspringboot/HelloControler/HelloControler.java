@@ -1,5 +1,6 @@
 package com.example.firstspringboot.HelloControler;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,9 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 //该注解是 @Controller 和 @ResponseBody 注解的合体版
 @RestController
 public class HelloControler {
+    //获取配置文件中的属性
+    @Value("${name}")
+    private String name;
+    @Value("${age}")
+    private Integer age;
+
     @RequestMapping("/hello")
     public String get() {
-        return "hello Spring Boot!";
+//        return "hello Spring Boot!";
+        return name + ":" + age;
     }
 
 }
