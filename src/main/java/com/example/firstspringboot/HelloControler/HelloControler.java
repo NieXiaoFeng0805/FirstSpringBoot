@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloControler {
     //获取配置文件中的属性
-    @Value("${name}")
+    @Value("${person.name}")
     private String name;
-    @Value("${age}")
+    @Value("${person.age}")
     private Integer age;
+
 
     @RequestMapping("/hello")
     public String get() {
 //        return "hello Spring Boot!";
         return name + ":" + age;
     }
-
 }

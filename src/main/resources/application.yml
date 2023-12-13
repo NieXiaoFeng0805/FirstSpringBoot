@@ -1,0 +1,15 @@
+#server:
+#  port: 8081
+#
+#person:
+#  age: 18
+#  boss: false
+#  birth: 2017/12/11
+#  maps: { K1: v2, K2: v1 }
+#  lists:
+#    - list_e1
+#    - list_e2
+#  dog:
+#    name: peiqi
+#    age: 2
+#  name: zhangsm

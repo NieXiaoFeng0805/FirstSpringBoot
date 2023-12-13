@@ -107,3 +107,67 @@ Spring Boot 的全局配置文件的作用是对一些默认配置的配置值�
 ![image-20231208184248267](ReadMe/image-20231208184248267.png)
 
 [配置Spring Boot 热部署](https://blog.csdn.net/hezhimin1124/article/details/103800614)
+
+
+
+
+
+# 编写Controler、Service等
+
+属于业务逻辑
+
+
+
+## 打包
+
+![image-20231212213318003](ReadMe/image-20231212212019008.png)
+
+![image-20231212213624990](ReadMe/image-20231212213624990.png)
+
+
+
+## 依赖导入
+
+SpringBoot将所有功能场景抽取成starts启动器，只需在项目中引入这些start相关即可
+
+
+
+![image-20231213140442258](ReadMe/image-20231213140442258.png)
+
+## yml文件配置与properties文件配置
+
+### yml文件
+
+pom.xml中添加依赖
+
+```xml
+        <!--        配置文件处理器，配置文件进行绑定时就会提升-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+```
+
+![image-20231213151401893](ReadMe/image-20231213151401893.png)
+
+![image-20231213151556894](ReadMe/image-20231213151556894.png)
+
+### properties文件
+
+![image-20231213153744093](ReadMe/image-20231213153413188.png)
+
+ConfigurationProperties和Value都能获取值，但是前者显然更简便
+
+```java
+@ConfigurationProperties(prefix = "person")
+@Value()
+```
+
+|                              | @ConfigurationProperties |   @Value   |
+| :--------------------------: | :----------------------: | :--------: |
+|             功能             | 批量注入配置文件中的属性 | 一个个指定 |
+|           松散绑定           |       支持松散绑定       |   不支持   |
+| Spring框架中的表达式语言SpEL |       不支持表达式       | 支持表达式 |
+|  复杂类型获取(map、list等)   |           支持           |   不支持   |
+

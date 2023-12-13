@@ -2,8 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!--    项目的父项目-->
     <parent>
         <groupId>org.springframework.boot</groupId>
+        <!--   整个项目的父项目的父项目，ctrl左键进入，用于管理Springboot中所有依赖版本-->
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
@@ -17,9 +19,16 @@
         <java.version>21</java.version>
     </properties>
     <dependencies>
+        <!--        导入web模块正常运行所需要的组件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--        配置文件处理器，配置文件进行绑定时就会提升-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -30,6 +39,7 @@
 
     </dependencies>
 
+    <!--    将整个应用打包，打包成一个可执行的.jar文件-->
     <build>
         <plugins>
             <plugin>
