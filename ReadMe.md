@@ -8,7 +8,7 @@ File ==> New ==> Project ==> Spring Initializr
 
 ![image-20231208161323496](ReadMe/image-20231208161323496.png)
 在创建时可以在开发工具(Developer Tools)中选择Lombok，可以省略很多代码(比如set、get、构造函数等)
-
+![2023-12-20_19-57-52](ReadMe/2023-12-20_19-57-52.png)
 
 
 # 项目结构
